@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { createClient } from '@/lib/supabase/client'
+import { supabase } from '@/lib/supabase'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -59,7 +59,6 @@ function fmtCurrency(value: number | null | undefined): string {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function IngredientsPage() {
-  const supabase = createClient()
 
   const [ingredients, setIngredients] = useState<Ingredient[]>([])
   const [filtered, setFiltered] = useState<Ingredient[]>([])
